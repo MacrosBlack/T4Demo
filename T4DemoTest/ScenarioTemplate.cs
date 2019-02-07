@@ -10,20 +10,20 @@ public class ScenariosTest:TestBase
 		Assert.IsTrue(OpenNoahStep());
 		Assert.IsTrue(FindGenieStep());
 		Assert.IsTrue(ClickGenieBtnStep());
-		}
+	}
 
     [TestMethod]
     public void CloseGenieTest()
     {
 		Assert.IsTrue(FindGenieStep());
 		Assert.IsTrue(CloseGenieStep());
-		}
+	}
 
     [TestMethod]
     public void OpenClient()
     {
 		Assert.IsTrue(FindGenieStep());
 		Assert.IsTrue(OpenClientStep());
-		}
+	}
 
 }

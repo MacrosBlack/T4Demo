@@ -34,7 +34,7 @@ foreach( var singleTest in tests)
 	<#
 	}
 	#>
-	}
+}
 
 <#
 }
