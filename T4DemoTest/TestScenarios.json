@@ -1,0 +1,14 @@
+[
+  {
+    "TestName": "StartGenieTest",
+    "TestStepName": [ "OpenNoahStep", "FindGenieStep", "ClickGenieBtnStep" ]
+  },
+  {
+    "TestName": "CloseGenieTest",
+    "TestStepName": [ "FindGenieStep", "CloseGenieStep" ]
+  },
+  {
+    "TestName": "OpenClient",
+    "TestStepName": [ "FindGenieStep", "OpenClientStep" ]
+  }
+]

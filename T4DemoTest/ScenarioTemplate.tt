@@ -1,0 +1,42 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="$(TargetDir)T4DemoModel.dll" #>
+<#@ assembly name="$(TargetDir)NewtonSoft.Json.dll" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="T4DemoModel" #>
+<#@ import namespace="Newtonsoft.Json" #>
+<#@ output extension=".cs" #>
+<#
+	var testContent = File.ReadAllText(@"D:\prj\T4Demo\T4DemoTest\bin\Debug\TestScenarios.json");
+	var tests = JsonConvert.DeserializeObject<ModelScenario[]>(testContent);
+#>
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+[TestClass]
+[DeploymentItem("TestScenarios.json")]
+public class ScenariosTest:TestBase
+{
+<# 
+foreach( var singleTest in tests)
+{
+#>
+    [TestMethod]
+    public void <#= singleTest.TestName #>()
+    {
+	<# 
+	foreach( var testStep in singleTest.TestStepName)
+	{
+	#>
+	Assert.IsTrue(<#= testStep#>());
+	<#
+	}
+	#>
+	}
+
+<#
+}
+#>
+}
