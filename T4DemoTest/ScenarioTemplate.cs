@@ -5,24 +5,31 @@
 public class ScenariosTest:TestBase
 {
     [TestMethod]
-    public void StartGenieTest()
+    public void OpenNoahTest()
     {
 		Assert.IsTrue(OpenNoahStep());
-		Assert.IsTrue(FindGenieStep());
-		Assert.IsTrue(ClickGenieBtnStep());
+		Assert.IsTrue(FindApplicationStep());
+		Assert.IsTrue(ClickApplicationBtnStep());
 	}
 
     [TestMethod]
-    public void CloseGenieTest()
+    public void CloseApplicationTest()
     {
-		Assert.IsTrue(FindGenieStep());
-		Assert.IsTrue(CloseGenieStep());
+		Assert.IsTrue(FindApplicationStep());
+		Assert.IsTrue(CloseApplicationStep());
 	}
 
     [TestMethod]
-    public void OpenClient()
+    public void OpenClientTest()
     {
-		Assert.IsTrue(FindGenieStep());
+		Assert.IsTrue(FindApplicationStep());
+		Assert.IsTrue(OpenClientStep());
+	}
+
+    [TestMethod]
+    public void GertTest()
+    {
+		Assert.IsTrue(FindApplicationStep());
 		Assert.IsTrue(OpenClientStep());
 	}
 

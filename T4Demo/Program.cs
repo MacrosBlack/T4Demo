@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using T4DemoModel;
 
@@ -21,6 +22,12 @@ namespace T4Demo
 
             var content = JsonConvert.SerializeObject(tests);
             var scenarios = JsonConvert.DeserializeObject<ModelScenario[]>(content);
+
+            var model = new Model();
+            foreach (var test in model.TestScenarios)
+            {
+                Console.WriteLine(test.TestName);
+            }
         }
     }
 }

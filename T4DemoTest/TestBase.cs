@@ -5,12 +5,12 @@
         return true;
     }
 
-    public bool FindGenieStep()
+    public bool FindDemoApplicationStep()
     {
         return true;
     }
 
-    public bool CloseGenieStep()
+    public bool CloseDemoApplicationStep()
     {
         return true;
     }
@@ -20,7 +20,7 @@
         return true;
     }
 
-    public bool ClickGenieBtnStep()
+    public bool ClickDemoApplicationBtnStep()
     {
         return true;
     }

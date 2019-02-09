@@ -10,8 +10,7 @@
 <#@ import namespace="Newtonsoft.Json" #>
 <#@ output extension=".cs" #>
 <#
-	var testContent = File.ReadAllText(@"D:\prj\T4Demo\T4DemoTest\bin\Debug\TestScenarios.json");
-	var tests = JsonConvert.DeserializeObject<ModelScenario[]>(testContent);
+	var model = new Model();
 #>
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -20,7 +19,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 public class ScenariosTest:TestBase
 {
 <# 
-foreach( var singleTest in tests)
+foreach( var singleTest in model.TestScenarios)
 {
 #>
     [TestMethod]
